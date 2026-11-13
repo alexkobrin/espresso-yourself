@@ -3,15 +3,417 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coffee Landing</title>
+  <title>Espresso Yourself — Single-Origin Coffee, Roasted to Order</title>
+  <meta name="description" content="Seven legendary single-origin coffees, roasted in small batches. Explore where the world's finest beans grow and find your perfect roast.">
+  <meta name="theme-color" content="#120a06">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-  <div class="hello">
-    <h1>Hello</h1>
-  </div>
-  <div class="hello">
-    <p>Hello, world! Welcome to our coffee.</p>
-  </div>
-  <!-- Token test line -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Reusable icons -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-bean" viewBox="0 0 100 100">
+      <ellipse cx="50" cy="50" rx="30" ry="42" fill="currentColor"/>
+      <path d="M50 10C38 32 62 62 50 90" fill="none" stroke="#000" stroke-opacity=".45" stroke-width="5" stroke-linecap="round"/>
+      <ellipse cx="40" cy="33" rx="8" ry="15" fill="#fff" fill-opacity=".14" transform="rotate(-18 40 33)"/>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24">
+      <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </svg>
+
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ============ Navigation ============ -->
+  <header class="nav" id="nav">
+    <a class="nav__logo" href="#hero" aria-label="Espresso Yourself — back to top">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#i-bean"/></svg>
+      <span>Espresso <em>Yourself</em></span>
+    </a>
+    <nav class="nav__menu" aria-label="Primary">
+      <ul class="nav__links">
+        <li><a href="#hero" data-nav>Home</a></li>
+        <li><a href="#origins" data-nav>Origins</a></li>
+        <li><a href="#roast" data-nav>Roast Lab</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--primary btn--small nav__cta" href="#join" data-magnetic><span>Join the club</span></a>
+  </header>
+
+  <main id="main">
+    <!-- ============ 01 · Hero ============ -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero__bg" aria-hidden="true">
+        <span class="blob blob--1"></span>
+        <span class="blob blob--2"></span>
+        <span class="blob blob--3"></span>
+      </div>
+      <div class="hero__beans" aria-hidden="true"></div>
+
+      <div class="hero__inner">
+        <div class="hero__content">
+          <p class="eyebrow" data-hero-fade>Specialty coffee · Roasted to order</p>
+          <h1 class="hero__title" id="hero-title" data-split>
+            <span class="line">Espresso</span>
+            <span class="line"><em>yourself.</em></span>
+          </h1>
+          <p class="hero__lead" data-hero-fade>
+            Seven legendary origins, roasted in small batches and shipped within 48 hours.
+            Coffee with a story — and a little attitude.
+          </p>
+          <div class="hero__actions" data-hero-fade>
+            <a class="btn btn--primary" href="#origins" data-magnetic>
+              <span>Explore origins</span>
+              <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="#roast" data-magnetic><span>Enter the Roast Lab</span></a>
+          </div>
+          <dl class="hero__stats" data-hero-fade>
+            <div><dt>Origins</dt><dd><span data-count="7">7</span></dd></div>
+            <div><dt>Highest farm</dt><dd><span data-count="2200">2,200</span><small>m</small></dd></div>
+            <div><dt>Roast to door</dt><dd><span data-count="48">48</span><small>h</small></dd></div>
+          </dl>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="cup-wrap">
+            <div class="badge">
+              <svg viewBox="0 0 200 200">
+                <defs>
+                  <path id="badge-circle" d="M100 100m-72 0a72 72 0 1 1 144 0a72 72 0 1 1-144 0"/>
+                </defs>
+                <circle class="badge__bg" cx="100" cy="100" r="98"/>
+                <text class="badge__text">
+                  <textPath href="#badge-circle" textLength="448">SINGLE ORIGIN • SMALL BATCH • ROASTED TO ORDER • </textPath>
+                </text>
+                <use class="badge__bean" href="#i-bean" x="72" y="72" width="56" height="56"/>
+              </svg>
+            </div>
+
+            <svg class="steam" viewBox="0 0 200 260">
+              <path pathLength="100" d="M70 250C50 210 90 180 70 140S50 70 70 20"/>
+              <path pathLength="100" d="M100 250C120 205 80 170 100 130S120 60 100 10"/>
+              <path pathLength="100" d="M130 250C110 210 150 180 130 140S110 70 130 20"/>
+            </svg>
+
+            <div class="cup">
+              <div class="cup__saucer"></div>
+              <div class="cup__handle"></div>
+              <div class="cup__body">
+                <div class="cup__coffee">
+                  <div class="cup__crema"></div>
+                  <svg class="cup__art" viewBox="0 0 100 100">
+                    <defs>
+                      <radialGradient id="milk" cx="50%" cy="45%" r="60%">
+                        <stop offset="0" stop-color="#fff4e4" stop-opacity=".95"/>
+                        <stop offset=".6" stop-color="#f0d6b4" stop-opacity=".85"/>
+                        <stop offset="1" stop-color="#d9a877" stop-opacity="0"/>
+                      </radialGradient>
+                    </defs>
+                    <path d="M50 80C22 62 14 44 26 31c9-9 20-6 24 4 4-10 15-13 24-4 12 13 4 31-24 49Z" fill="url(#milk)"/>
+                  </svg>
+                  <div class="cup__shine"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#origins" aria-label="Scroll to origins"><span></span></a>
+    </section>
+
+    <!-- ============ Marquee ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <div class="marquee__group">
+          <span class="marquee__item">Kona</span><svg><use href="#i-bean"/></svg>
+          <span class="marquee__item">Blue Mountain</span><svg><use href="#i-bean"/></svg>
+          <span class="marquee__item">Huila</span><svg><use href="#i-bean"/></svg>
+          <span class="marquee__item">Sul de Minas</span><svg><use href="#i-bean"/></svg>
+          <span class="marquee__item">Yirgacheffe</span><svg><use href="#i-bean"/></svg>
+          <span class="marquee__item">Nyeri</span><svg><use href="#i-bean"/></svg>
+          <span class="marquee__item">Gayo</span><svg><use href="#i-bean"/></svg>
+        </div>
+        <div class="marquee__group">
+          <span class="marquee__item">Kona</span><svg><use href="#i-bean"/></svg>
+          <span class="marquee__item">Blue Mountain</span><svg><use href="#i-bean"/></svg>
+          <span class="marquee__item">Huila</span><svg><use href="#i-bean"/></svg>
+          <span class="marquee__item">Sul de Minas</span><svg><use href="#i-bean"/></svg>
+          <span class="marquee__item">Yirgacheffe</span><svg><use href="#i-bean"/></svg>
+          <span class="marquee__item">Nyeri</span><svg><use href="#i-bean"/></svg>
+          <span class="marquee__item">Gayo</span><svg><use href="#i-bean"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 02 · Origins ============ -->
+    <section class="origins" id="origins" aria-labelledby="origins-title">
+      <header class="section-head">
+        <p class="eyebrow" data-reveal>02 — Origins</p>
+        <h2 class="section-title" id="origins-title" data-reveal>Where the world’s <em>finest beans</em> grow</h2>
+        <p class="section-lead" data-reveal>
+          Coffee only thrives in the “bean belt” — the tropical band between 23.4°N and 23.4°S,
+          where altitude, rainfall and volcanic soil shape every cup. Scroll to travel west to east.
+        </p>
+      </header>
+
+      <div class="origins__pin" data-origins>
+        <div class="origins__sticky">
+          <div class="belt">
+            <svg viewBox="0 0 360 80" role="img" aria-labelledby="belt-title">
+              <title id="belt-title">The coffee belt between the Tropic of Cancer and the Tropic of Capricorn, with seven famous coffee origins marked</title>
+              <defs>
+                <pattern id="belt-dots" width="4" height="4" patternUnits="userSpaceOnUse">
+                  <circle cx="2" cy="2" r=".4" fill="#f5ece0" fill-opacity=".13"/>
+                </pattern>
+                <linearGradient id="belt-band" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#c8864a" stop-opacity="0"/>
+                  <stop offset=".5" stop-color="#c8864a" stop-opacity=".22"/>
+                  <stop offset="1" stop-color="#c8864a" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <rect width="360" height="80" fill="url(#belt-dots)"/>
+              <rect y="16.56" width="360" height="46.88" fill="url(#belt-band)"/>
+              <path class="belt__grid" d="M30 0V80M60 0V80M90 0V80M120 0V80M150 0V80M180 0V80M210 0V80M240 0V80M270 0V80M300 0V80M330 0V80"/>
+              <line class="belt__tropic" x1="0" y1="16.56" x2="360" y2="16.56"/>
+              <line class="belt__equator" x1="0" y1="40" x2="360" y2="40"/>
+              <line class="belt__tropic" x1="0" y1="63.44" x2="360" y2="63.44"/>
+              <text class="belt__caption" x="358" y="15">Tropic of Cancer · 23.4°N</text>
+              <text class="belt__caption" x="358" y="38.6">Equator · 0°</text>
+              <text class="belt__caption" x="358" y="62">Tropic of Capricorn · 23.4°S</text>
+              <g class="belt__routes"></g>
+              <g class="belt__dots"></g>
+              <g class="belt__label"><text y="-4.5"></text></g>
+            </svg>
+          </div>
+
+          <div class="origins__viewport">
+            <ol class="origins__track">
+              <li class="origin-card" style="--accent:#e07a4f" data-name="Kona, Hawaiʻi" data-lat="19.6" data-lon="-155.9" data-alt-min="150" data-alt-max="900">
+                <div class="origin-card__top"><span class="origin-card__index">01</span><span>19.6°N · 155.9°W</span></div>
+                <h3 class="origin-card__country">Hawaiʻi, USA</h3>
+                <p class="origin-card__region">Kona District · Hawaiʻi Island</p>
+                <p class="origin-card__desc">One of the rare coffees grown in the United States, on the volcanic slopes of Mauna Loa and Hualālai.</p>
+                <div class="alt">
+                  <div class="alt__labels"><span>Altitude</span><strong>150–900 m</strong></div>
+                  <div class="alt__bar"><span></span></div>
+                </div>
+                <ul class="origin-card__notes" aria-label="Tasting notes"><li>Macadamia</li><li>Brown sugar</li><li>Milk chocolate</li></ul>
+              </li>
+
+              <li class="origin-card" style="--accent:#6fa3a0" data-name="Blue Mountain, Jamaica" data-lat="18.1" data-lon="-76.6" data-alt-min="910" data-alt-max="1700">
+                <div class="origin-card__top"><span class="origin-card__index">02</span><span>18.1°N · 76.6°W</span></div>
+                <h3 class="origin-card__country">Jamaica</h3>
+                <p class="origin-card__region">Blue Mountains</p>
+                <p class="origin-card__desc">Cool mist and steep slopes produce a famously smooth, balanced cup, long prized by collectors in Japan.</p>
+                <div class="alt">
+                  <div class="alt__labels"><span>Altitude</span><strong>910–1,700 m</strong></div>
+                  <div class="alt__bar"><span></span></div>
+                </div>
+                <ul class="origin-card__notes" aria-label="Tasting notes"><li>Floral</li><li>Sweet cream</li><li>Mild</li></ul>
+              </li>
+
+              <li class="origin-card" style="--accent:#e3b04b" data-name="Huila, Colombia" data-lat="2.5" data-lon="-75.6" data-alt-min="1500" data-alt-max="2000">
+                <div class="origin-card__top"><span class="origin-card__index">03</span><span>2.5°N · 75.6°W</span></div>
+                <h3 class="origin-card__country">Colombia</h3>
+                <p class="origin-card__region">Huila · Southern Andes</p>
+                <p class="origin-card__desc">Andean valleys and two harvests a year make Huila the heart of Colombian specialty coffee.</p>
+                <div class="alt">
+                  <div class="alt__labels"><span>Altitude</span><strong>1,500–2,000 m</strong></div>
+                  <div class="alt__bar"><span></span></div>
+                </div>
+                <ul class="origin-card__notes" aria-label="Tasting notes"><li>Red apple</li><li>Caramel</li><li>Citrus</li></ul>
+              </li>
+
+              <li class="origin-card" style="--accent:#c9774a" data-name="Sul de Minas, Brazil" data-lat="-21.5" data-lon="-45.5" data-alt-min="800" data-alt-max="1300">
+                <div class="origin-card__top"><span class="origin-card__index">04</span><span>21.5°S · 45.5°W</span></div>
+                <h3 class="origin-card__country">Brazil</h3>
+                <p class="origin-card__region">Sul de Minas · Minas Gerais</p>
+                <p class="origin-card__desc">The world’s largest producer. Natural-processed lots bring body and sweetness to espresso blends.</p>
+                <div class="alt">
+                  <div class="alt__labels"><span>Altitude</span><strong>800–1,300 m</strong></div>
+                  <div class="alt__bar"><span></span></div>
+                </div>
+                <ul class="origin-card__notes" aria-label="Tasting notes"><li>Milk chocolate</li><li>Hazelnut</li><li>Low acidity</li></ul>
+              </li>
+
+              <li class="origin-card" style="--accent:#c99ad6" data-name="Yirgacheffe, Ethiopia" data-lat="6.2" data-lon="38.2" data-alt-min="1750" data-alt-max="2200">
+                <div class="origin-card__top"><span class="origin-card__index">05</span><span>6.2°N · 38.2°E</span></div>
+                <h3 class="origin-card__country">Ethiopia</h3>
+                <p class="origin-card__region">Yirgacheffe · Gedeo Zone</p>
+                <p class="origin-card__desc">The birthplace of coffee. Heirloom varieties deliver tea-like, intensely floral cups.</p>
+                <div class="alt">
+                  <div class="alt__labels"><span>Altitude</span><strong>1,750–2,200 m</strong></div>
+                  <div class="alt__bar"><span></span></div>
+                </div>
+                <ul class="origin-card__notes" aria-label="Tasting notes"><li>Jasmine</li><li>Bergamot</li><li>Lemon</li></ul>
+              </li>
+
+              <li class="origin-card" style="--accent:#d0546a" data-name="Nyeri, Kenya" data-lat="-0.4" data-lon="37" data-alt-min="1500" data-alt-max="1900">
+                <div class="origin-card__top"><span class="origin-card__index">06</span><span>0.4°S · 37.0°E</span></div>
+                <h3 class="origin-card__country">Kenya</h3>
+                <p class="origin-card__region">Nyeri · Central Highlands</p>
+                <p class="origin-card__desc">Volcanic soils on the slopes of Mount Kenya give SL28 and SL34 coffees a bright, juicy acidity.</p>
+                <div class="alt">
+                  <div class="alt__labels"><span>Altitude</span><strong>1,500–1,900 m</strong></div>
+                  <div class="alt__bar"><span></span></div>
+                </div>
+                <ul class="origin-card__notes" aria-label="Tasting notes"><li>Blackcurrant</li><li>Grapefruit</li><li>Brown sugar</li></ul>
+              </li>
+
+              <li class="origin-card" style="--accent:#8aa865" data-name="Gayo, Sumatra" data-lat="4.6" data-lon="96.8" data-alt-min="1200" data-alt-max="1600">
+                <div class="origin-card__top"><span class="origin-card__index">07</span><span>4.6°N · 96.8°E</span></div>
+                <h3 class="origin-card__country">Indonesia</h3>
+                <p class="origin-card__region">Gayo Highlands · Aceh, Sumatra</p>
+                <p class="origin-card__desc">Wet-hulled processing (giling basah) creates the heavy body and earthy depth Sumatra is known for.</p>
+                <div class="alt">
+                  <div class="alt__labels"><span>Altitude</span><strong>1,200–1,600 m</strong></div>
+                  <div class="alt__bar"><span></span></div>
+                </div>
+                <ul class="origin-card__notes" aria-label="Tasting notes"><li>Dark chocolate</li><li>Cedar</li><li>Earthy spice</li></ul>
+              </li>
+            </ol>
+          </div>
+
+          <div class="origins__meta" aria-hidden="true">
+            <span class="origins__count"><span data-origin-current>01</span> / 07</span>
+            <span class="origins__bar"><span></span></span>
+            <span class="origins__hint">Scroll to travel</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 03 · Roast Lab ============ -->
+    <section class="roast section" id="roast" aria-labelledby="roast-title">
+      <header class="section-head">
+        <p class="eyebrow" data-reveal>03 — Roast Lab</p>
+        <h2 class="section-title" id="roast-title" data-reveal>Find your <em>perfect roast</em></h2>
+        <p class="section-lead" data-reveal>
+          Heat turns a dense green seed into hundreds of aromatic compounds. Drag the slider to roast
+          a bean, watch its character change — and listen for the cracks.
+        </p>
+      </header>
+
+      <div class="roast__lab" data-roast>
+        <div class="roast__visual" data-reveal>
+          <svg class="steam roast__smoke" viewBox="0 0 200 260" aria-hidden="true">
+            <path pathLength="100" d="M70 250C50 210 90 180 70 140S50 70 70 20"/>
+            <path pathLength="100" d="M100 250C120 205 80 170 100 130S120 60 100 10"/>
+            <path pathLength="100" d="M130 250C110 210 150 180 130 140S110 70 130 20"/>
+          </svg>
+          <div class="roast__bean-wrap">
+            <svg class="roast__bean" viewBox="0 0 100 100" aria-hidden="true">
+              <defs>
+                <radialGradient id="bean-shade" cx="35%" cy="30%" r="75%">
+                  <stop offset="0" stop-color="#fff" stop-opacity=".22"/>
+                  <stop offset=".45" stop-color="#fff" stop-opacity="0"/>
+                  <stop offset="1" stop-color="#000" stop-opacity=".5"/>
+                </radialGradient>
+                <radialGradient id="bean-oil" cx="50%" cy="50%" r="50%">
+                  <stop offset="0" stop-color="#fff" stop-opacity=".85"/>
+                  <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <ellipse class="roast__bean-base" cx="50" cy="50" rx="30" ry="42"/>
+              <ellipse cx="50" cy="50" rx="30" ry="42" fill="url(#bean-shade)"/>
+              <path class="roast__bean-crease" d="M50 10C38 32 62 62 50 90"/>
+              <ellipse class="roast__bean-oil" cx="39" cy="31" rx="8" ry="14" fill="url(#bean-oil)" transform="rotate(-18 39 31)"/>
+            </svg>
+          </div>
+          <div class="roast__sparks" aria-hidden="true"></div>
+        </div>
+
+        <div class="roast__panel">
+          <p class="roast__alias" data-roast-alias>City · American</p>
+          <h3 class="roast__stage" data-roast-stage aria-live="polite">Medium</h3>
+          <p class="roast__temp" aria-hidden="true"><span data-roast-temp>212</span><span class="roast__unit">°C</span></p>
+          <p class="roast__desc" data-roast-desc>Balanced and sweet — caramelised sugars meet the bean’s natural acidity.</p>
+
+          <div class="roast__meters">
+            <div class="meter" data-meter="acidity">
+              <div class="meter__head"><span>Acidity</span><span data-meter-value></span></div>
+              <div class="meter__track"><span class="meter__fill"></span></div>
+            </div>
+            <div class="meter" data-meter="sweetness">
+              <div class="meter__head"><span>Sweetness</span><span data-meter-value></span></div>
+              <div class="meter__track"><span class="meter__fill"></span></div>
+            </div>
+            <div class="meter" data-meter="body">
+              <div class="meter__head"><span>Body</span><span data-meter-value></span></div>
+              <div class="meter__track"><span class="meter__fill"></span></div>
+            </div>
+            <div class="meter" data-meter="bitterness">
+              <div class="meter__head"><span>Bitterness</span><span data-meter-value></span></div>
+              <div class="meter__track"><span class="meter__fill"></span></div>
+            </div>
+          </div>
+
+          <div class="roast__control">
+            <div class="roast__cracks" aria-hidden="true">
+              <span class="crack" data-crack="196" data-label="First crack!">1st crack · 196°C</span>
+              <span class="crack" data-crack="224" data-label="Second crack!">2nd crack · 224°C</span>
+            </div>
+            <label class="visually-hidden" for="roastRange">Roast temperature in degrees Celsius</label>
+            <input class="roast__range" id="roastRange" type="range" min="185" max="245" step="0.5" value="212">
+            <div class="roast__stages" role="group" aria-label="Jump to a roast level">
+              <button type="button" data-roast-to="201" data-stage="Light">Light</button>
+              <button type="button" data-roast-to="213" data-stage="Medium">Medium</button>
+              <button type="button" data-roast-to="225" data-stage="Medium-Dark">Med-Dark</button>
+              <button type="button" data-roast-to="238" data-stage="Dark">Dark</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Footer / CTA ============ -->
+  <footer class="footer" id="join">
+    <div class="footer__cta container">
+      <div>
+        <p class="eyebrow" data-reveal>Join the club</p>
+        <h2 class="section-title" data-reveal>Your next cup is <em>waiting.</em></h2>
+      </div>
+      <div class="footer__form" data-reveal>
+        <p class="section-lead">A new single origin every month, roasted the week it ships — plus brew guides from our roasters.</p>
+        <form class="subscribe" data-subscribe novalidate>
+          <label class="visually-hidden" for="email">Email address</label>
+          <div class="subscribe__field">
+            <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+            <button class="btn btn--primary" type="submit">
+              <span>Subscribe</span>
+              <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+            </button>
+          </div>
+          <p class="subscribe__msg" data-form-msg role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+
+    <p class="footer__mega" aria-hidden="true" data-reveal>Espresso</p>
+
+    <div class="footer__bottom container">
+      <a class="nav__logo" href="#hero">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#i-bean"/></svg>
+        <span>Espresso <em>Yourself</em></span>
+      </a>
+      <ul class="footer__links">
+        <li><a href="#origins">Origins</a></li>
+        <li><a href="#roast">Roast Lab</a></li>
+        <li><a href="#join">Join</a></li>
+      </ul>
+      <p class="footer__copy">© <span data-year>2026</span> Espresso Yourself. Crafted with care.</p>
+    </div>
+  </footer>
 </body>
 </html>
