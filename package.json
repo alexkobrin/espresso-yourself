@@ -1,0 +1,16 @@
+{
+  "name": "coffe-landing",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "images": "node scripts/generate-images.mjs",
+    "optimize": "node scripts/optimize-images.mjs"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.10"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^25.17.0",
+    "sharp": "^0.35.5"
+  }
+}
