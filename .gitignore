@@ -1,0 +1,10 @@
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.claude/settings.local.json
+node_modules/
+screenshots/
+images/originals/
+videos/
