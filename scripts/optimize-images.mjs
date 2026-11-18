@@ -15,6 +15,15 @@ const OUT = path.join(ROOT, 'images');
 const MAX_WIDTH = 1200; // ~2x the largest on-page display width
 const QUALITY = 80;
 
+// Images shown full-screen (or close to it) need more pixels than the default.
+const WIDTHS = {
+  'xh-hero': 2400,
+  'xh-gold-dust': 2400,
+  'xh-reserve': 2400,
+  'xh-box-closed': 2000,
+  'xh-box-open': 2000,
+};
+
 await mkdir(SRC, { recursive: true });
 const files = (await readdir(SRC)).filter((f) => /\.(jpe?g|png|webp)$/i.test(f));
 if (!files.length) {
@@ -29,7 +38,7 @@ for (const file of files) {
 
   const info = await sharp(input)
     .rotate()
-    .resize({ width: MAX_WIDTH, withoutEnlargement: true })
+    .resize({ width: WIDTHS[name] ?? MAX_WIDTH, withoutEnlargement: true })
     .jpeg({ quality: QUALITY, mozjpeg: true, progressive: true })
     .toFile(output);
 

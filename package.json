@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "images": "node scripts/generate-images.mjs",
-    "optimize": "node scripts/optimize-images.mjs"
+    "optimize": "node scripts/optimize-images.mjs",
+    "shot": "node scripts/screenshot.mjs"
   },
   "dependencies": {
     "dotenv": "^18.0.10"
