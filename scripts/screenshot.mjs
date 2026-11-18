@@ -1,7 +1,7 @@
 // Take full-page screenshots of a page using the locally installed Microsoft Edge.
 //
 // Usage: node scripts/screenshot.mjs [page.html] [outDir]
-// Defaults: coffe-new.html, ./screenshots
+// Defaults: index.html, ./screenshots
 
 import puppeteer from 'puppeteer-core';
 import { mkdir } from 'node:fs/promises';
@@ -9,7 +9,7 @@ import path from 'node:path';
 import { pathToFileURL, fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const page = process.argv[2] || 'coffe-new.html';
+const page = process.argv[2] || 'index.html';
 const outDir = path.resolve(ROOT, process.argv[3] || 'screenshots');
 const EDGE = process.env.BROWSER_PATH || 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe';
 

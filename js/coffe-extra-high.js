@@ -1,6 +1,6 @@
 // Espresso Yourself — Extra High Reserve (coffe-extra-high.html)
 //
-// Two layers, same as coffe-new.js:
+// Two layers:
 //  1. Basics that work everywhere (nav, reveal, card stacking, lot picker, form).
 //  2. A slow, cinematic motion layer (GSAP + ScrollTrigger + SplitText + DrawSVG + Lenis)
 //     that only runs when the libraries loaded and the visitor hasn't asked for reduced motion.
